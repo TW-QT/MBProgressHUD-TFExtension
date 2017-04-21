@@ -1,5 +1,5 @@
 
-#import "MBProgressHUD+MJ.h"
+#import "MBProgressHUD+TFExtension.h"
 
 @implementation MBProgressHUD (TFExtension)
 #pragma mark 显示信息

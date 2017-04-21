@@ -10,7 +10,7 @@
         if (blockView == nil) blockView = [[UIApplication sharedApplication].windows lastObject];
         // 快速显示一个提示信息
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:blockView animated:YES];
-        hud.labelText = text;
+        hud.label.text = text;
         // 设置图片
         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD.bundle/%@", icon]]];
         // 再设置模式
@@ -19,8 +19,8 @@
         // 隐藏时候从父控件中移除
         hud.removeFromSuperViewOnHide = YES;
         
-        // 1秒之后再消失
-        [hud hide:YES afterDelay:1.0];
+        // 1.5秒之后再消失
+        [hud hideAnimated:YES afterDelay:1.5];
     });
 }
 
@@ -41,7 +41,7 @@
         if (blockView == nil) blockView = [[UIApplication sharedApplication].windows lastObject];
         // 快速显示一个提示信息
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:blockView animated:YES];
-        hud.labelText = message;
+        hud.label.text = message;
         // 隐藏时候从父控件中移除
         hud.removeFromSuperViewOnHide = YES;
         // YES代表需要蒙版效果
@@ -57,16 +57,16 @@
         if (blockView == nil) blockView = [[UIApplication sharedApplication].windows lastObject];
         // 快速显示一个提示信息
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:blockView animated:YES];
-        hud.detailsLabelText = success;
+        hud.detailsLabel.text = success;
         // 设置图片
         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD.bundle/%@", @"success.png"]]];
         // 再设置模式
         hud.mode = MBProgressHUDModeCustomView;
         // 隐藏时候从父控件中移除
         hud.removeFromSuperViewOnHide = YES;
-        hud.detailsLabelFont = [UIFont systemFontOfSize:16]; //Johnkui - added
+        hud.detailsLabel.font = [UIFont systemFontOfSize:16]; //Johnkui - added
         // 1秒之后再消失
-        [hud hide:YES afterDelay:1.0];
+        [hud hideAnimated:YES afterDelay:1.5];
     });
     
 
@@ -79,16 +79,16 @@
         if (blockView == nil) blockView = [[UIApplication sharedApplication].windows lastObject];
         // 快速显示一个提示信息
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:blockView animated:YES];
-        hud.detailsLabelText = error;
+        hud.detailsLabel.text = error;
         // 设置图片
         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD.bundle/%@", @"error.png"]]];
         // 再设置模式
         hud.mode = MBProgressHUDModeCustomView;
         // 隐藏时候从父控件中移除
         hud.removeFromSuperViewOnHide = YES;
-        hud.detailsLabelFont = [UIFont systemFontOfSize:16]; //Johnkui - added
+        hud.detailsLabel.font = [UIFont systemFontOfSize:16]; //Johnkui - added
         // 1秒之后再消失
-        [hud hide:YES afterDelay:1.0];
+        [hud hideAnimated:YES afterDelay:1.5];
     });
     
 }
@@ -100,12 +100,12 @@
         if (blockView == nil) blockView = [[UIApplication sharedApplication].windows lastObject];
         // 快速显示一个提示信息
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:blockView animated:YES];
-        hud.detailsLabelText = message;
+        hud.detailsLabel.text = message;
         // 隐藏时候从父控件中移除
         hud.removeFromSuperViewOnHide = YES;
         // YES代表需要蒙版效果
         //    hud.dimBackground = YES;
-        hud.detailsLabelFont = [UIFont systemFontOfSize:16]; //Johnkui - added
+        hud.detailsLabel.font = [UIFont systemFontOfSize:16]; //Johnkui - added
     });
     
 }
@@ -151,7 +151,6 @@
 }
 + (void)hideHUDAnimated:(BOOL)animated
 {
-    [self hideHUDForView:nil animated:animated];
-
+    [self hideHUDAnimated:animated];
 }
 @end

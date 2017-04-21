@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MBProgressHUD-TFExtension"
-  s.version      = "1.0.1"
+  s.version      = "1.1.0"
   s.summary      = "Dabay tech : MBProgressHUD-TFExtension is based on MBProgressHUD."
   s.homepage     = "https://github.com/Donkey-Tao/MBProgressHUD-TFExtension"
   s.license      = "MIT"
